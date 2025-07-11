@@ -1,14 +1,14 @@
 Classes:
 
-Train (id, position, length, capacity, speed)
+Train (id, position, noCars, speed)
     PassengerTrain implements Passengers
 
 
-Station (id, position, transfer time, lines[])
+Station (id, position, transferTime, lines[])
     PassengerStation implements Passengers, Trains
 
 
-Track (id, fromStationId, toStationId, length)
+Track (id, fromStation, toStation, length)
     OneWayTrack implements Trains
     TwoWayTrack implements Trains
 
