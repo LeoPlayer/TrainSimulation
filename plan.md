@@ -4,17 +4,17 @@ Train (id, position, noCars, speed)
     PassengerTrain implements Passengers
 
 
-Station (id, position, transferTime, lines[])
-    PassengerStation implements Passengers, Trains
+Station implements HoldsTrains (id, position, transferTime, lines[])
+    PassengerStation implements Passengers
 
 
-Track (id, fromStation, toStation, length)
-    OneWayTrack implements Trains
-    TwoWayTrack implements Trains
+Track implements HoldsTrains (id, fromStation, toStation, length)
+    OneWayTrack
+    TwoWayTrack
 
 
 Line (id, route)
-    TrainLine implements Trains
+    TrainLine implements HoldsTrains
 
 
 Load (id, position, Train or Station id, destination)
@@ -26,5 +26,6 @@ Load (id, position, Train or Station id, destination)
 
 interfaces:
 
-Passengers (passengers[])
-Trains (trains[])
+CarriesLoad ()
+CarriesPassengers (passengers[])
+HoldsTrains (trains[])
