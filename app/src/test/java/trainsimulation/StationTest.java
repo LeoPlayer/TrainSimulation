@@ -21,8 +21,7 @@ public class StationTest {
             "id", "pas-station-1",
             "type", "Passenger Station",
             "x", "1",
-            "y", "3",
-            "transfer", "5"
+            "y", "3"
         ));
 
         assertEquals("pas-station-1", ResponseHandler.getEntities(controller, "Passenger Station").get(0).getId());

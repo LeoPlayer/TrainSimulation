@@ -56,3 +56,23 @@ Train
 
 
 ### Scheme
+
+#### Entities (All require <code>id=String</code>)
+<table>
+<thead>
+  <tr>
+    <th>type</th>
+    <th>Position ('x' and 'y')?</th>
+    <th>Required parameters</th>
+    <th>Optional Parameters = default</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><code>Passenger Station</code></td>
+    <td>Yes</td>
+    <td></td>
+    <td><code>transfer=5(ticks)<br>pax=20</code></td>
+  </tr>
+</tbody>
+</table>

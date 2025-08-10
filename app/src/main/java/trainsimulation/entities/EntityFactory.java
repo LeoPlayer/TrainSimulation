@@ -9,7 +9,12 @@ public class EntityFactory {
     public static Entity create(JSONObject obj) {
         String id = obj.getString("id");
         return switch (obj.getString("type")) {
-            case "Passenger Station" -> new PassengerStation(id, getPosition(obj), obj.getInt("transfer"));
+            case "Passenger Station" -> new PassengerStation(
+                id,
+                getPosition(obj),
+                obj.optInt("pax", PassengerStation.PAX),
+                obj.optInt("transfer", PassengerStation.TRANSFER_TIME)
+                );
             default -> null;
         };
     }

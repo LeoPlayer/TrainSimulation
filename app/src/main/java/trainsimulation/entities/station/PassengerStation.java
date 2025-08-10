@@ -9,12 +9,15 @@ import trainsimulation.interfaces.CarriesPassengers;
 import trainsimulation.utility.Position;
 
 public class PassengerStation extends Station implements CarriesPassengers {
-    private static final int PAX = 20;
+    public static final int PAX = 20;
+    public static final int TRANSFER_TIME = 5; // in ticks
+    private int pax;
     private int transferTime;
     private List<Passenger> passengers = new ArrayList<Passenger>();
 
-    public PassengerStation(String id, Position position, int transferTime) {
+    public PassengerStation(String id, Position position, int pax, int transferTime) {
         super(id, position);
+        this.pax = pax;
         this.transferTime = transferTime;
     }
 
@@ -34,7 +37,10 @@ public class PassengerStation extends Station implements CarriesPassengers {
 
     @Override
     public int pax() {
-        return PAX;
+        return pax;
     }
 
+    public int transferTime() {
+        return transferTime;
+    }
 }
