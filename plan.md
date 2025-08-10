@@ -72,7 +72,7 @@ Train
     <td><code>Passenger Station</code></td>
     <td>Yes</td>
     <td></td>
-    <td><code>transfer=5(ticks)<br>pax=20</code></td>
+    <td><code>transfer=5(ticks)</code><br><code>pax=20</code></td>
   </tr>
 </tbody>
 </table>
