@@ -1,11 +1,15 @@
 package trainsimulation.utility;
 
 import trainsimulation.entities.Entity;
+import trainsimulation.entities.station.PassengerStation;
 import trainsimulation.entities.station.Station;
 
 public class ClassGetter {
     public static String getName(Entity entity) {
         if (entity instanceof Station) {
+            if (entity instanceof PassengerStation) {
+                return "Passenger Station";
+            }
             return "Station";
         }
 

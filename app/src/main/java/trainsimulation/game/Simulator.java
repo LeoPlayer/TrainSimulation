@@ -2,10 +2,10 @@ package trainsimulation.game;
 
 import java.util.List;
 
-import trainsimulation.entities.station.PassengerStation;
-import trainsimulation.entities.station.Station;
-import trainsimulation.entities.line.Line;
-import trainsimulation.utility.Position;
+import org.json.JSONObject;
+
+import trainsimulation.entities.Entity;
+import trainsimulation.entities.EntityFactory;
 
 public class Simulator {
     private Map map;
@@ -14,25 +14,19 @@ public class Simulator {
         map = new Map();
     }
 
-    public void createPassengerStation(String id, Position position, int transferTime) {
-        map.addEntity(new PassengerStation(id, position, transferTime));
-     };
-
-    public void createTrack(String id, Station fromStation, Station toStation, int length) { };
-
-    public void createLine(String id, List<String> route) { };
+    public void addEntity(JSONObject obj) {
+        map.addEntity(EntityFactory.create(obj));
+    }
 
     public void modifyLine(String id, List<String> newRoute) { };
-
-    public void removeLine(String id) { };
-
-    public void createTrain(String id, Position position, Line line, int length, String model) { };
-
-    public void removeTrain(String id) { };
 
     public void simulate(int seconds) { };
 
     public void breakTrain(String id, int seconds) { };
+
+    public void removeEntity(Entity entity) {
+        map.removeEntity(entity);
+    }
 
     public void removeEntity(String id) {
         map.removeEntity(id);
@@ -41,5 +35,13 @@ public class Simulator {
     // Getters
     public Map getMap() {
         return map;
+    }
+
+    public List<Entity> getEntities() {
+        return map.getEntities();
+    }
+
+    public <T extends Entity> List<T> getEntities(Class<T> t) {
+        return map.getEntities().stream().filter(e -> t.isInstance(e)).map(e -> t.cast(e)).toList();
     }
 }

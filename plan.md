@@ -29,3 +29,30 @@ interfaces:
 CarriesLoad ()
 CarriesPassengers (passengers[])
 HoldsTrains (trains[])
+
+
+
+
+### Functionality:
+
+Station
+ - set at any position (x,y), with any transfer time (ticks)
+
+Track
+ - connects any two stations
+ - length calculated from position of stations
+
+Line
+ - Set of stations that have tracks between
+ - Can choose which stations to stop at
+ - Can choose to be loop line
+
+Load
+ - Choose destination, and best route decided by shortest distance
+
+Train
+ - Capacity can be increased by number of carriages
+ - Speed can be decided on creation
+
+
+### Scheme
